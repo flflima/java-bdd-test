@@ -63,7 +63,7 @@ class CalculatorTest extends Specification {
     }
 
     @Unroll("Dividing #first by #second must returns a quotient equals to #result")
-    def "Dividing two numbers must return a quotient equals to #result"() {
+    def "Dividing two numbers must return a quotient"() {
         given: "a Calculator"
         def calculator = new Calculator()
 
