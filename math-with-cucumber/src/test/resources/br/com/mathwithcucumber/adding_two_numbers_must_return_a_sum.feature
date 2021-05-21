@@ -1,5 +1,5 @@
 Feature: Adding two numbers must return a sum
-  As addition operation in a calculator
+  An addition operation in a calculator
 
   Scenario Outline: <first> plus <second> is equal to <result>
     Given a calculator
