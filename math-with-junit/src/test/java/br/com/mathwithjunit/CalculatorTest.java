@@ -59,4 +59,56 @@ class CalculatorTest {
         assertEquals(-28, result);
     }
 
+    @Test
+    @DisplayName("Given a calculator when a subtract operation is executed then 1 minus 2 is equal to -1")
+    void givenACalculatorWhenASubtractOperationIsExecutedThen1Minus2IsEqualToNegative1() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.subtract(1, 2);
+
+        // assert
+        assertEquals(-1, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when a subtract operation is executed then 10 minus 10 is equal to 0")
+    void givenACalculatorWhenASubtractOperationIsExecutedThen10Minus10IsEqualTo0() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.subtract(10, 10);
+
+        // assert
+        assertEquals(0, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when a subtract operation is executed then -10 minus -10 is equal to 0")
+    void givenACalculatorWhenASubtractOperationIsExecutedThenNegative10MinusNegative10IsEqualTo0() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.subtract(-10, -10);
+
+        // assert
+        assertEquals(0, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when a subtract operation is executed then -15 minus 15 is equal to -30")
+    void givenACalculatorWhenASubtractOperationIsExecutedThenNegative15Minus15IsEqualToNegative30() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.subtract(-15, 15);
+
+        // assert
+        assertEquals(-30, result);
+    }
+
 }
