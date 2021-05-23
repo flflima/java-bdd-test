@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
 
@@ -161,6 +163,72 @@ class CalculatorTest {
 
         // assert
         assertEquals(150, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when 90 is divided by 2 then the quotient is equal to 45")
+    void givenACalculatorWhen90IsDividedBy2ThenTheQuotientIsEqualTo45() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.divide(90, 2);
+
+        // assert
+        assertEquals(45, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when 1 is divided by 10 then the quotient is equal to 0.1")
+    void givenACalculatorWhen1IsDividedBy10ThenTheQuotientIsEqualTo0_1() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.divide(1, 10);
+
+        // assert
+        assertEquals(0.1, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when -10 is divided by 10 then the quotient is equal to -1")
+    void givenACalculatorWhenNegative10IsDividedBy10ThenTheQuotientIsEqualToNegative1() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.divide(-10, 10);
+
+        // assert
+        assertEquals(-1, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when -15 is divided by -10 then the quotient is equal to 1.5")
+    void givenACalculatorWhenNegative15IsDividedByNegative10ThenTheQuotientIsEqualTo1_5() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.divide(-15, -10);
+
+        // assert
+        assertEquals(1.5, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when a number is divided by 0 then must throw an exception")
+    void givenACalculatorWhenANumberIsDividedBy0ThenMustThrowAnException() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(5, 0));
+
+        // assert
+        assertNotNull(exception);
+        assertEquals("Divisor is equal to zero!", exception.getMessage());
     }
 
 }
