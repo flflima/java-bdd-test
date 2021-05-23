@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CalculatorTest {
 
     @Test
-    @DisplayName("Given a calculator when an add operation is executed then 1 plus 1 is equal to 2")
-    void givenACalculatorWhenAnAddOperationIsExecutedThen1Plus1IsEqualTo2() {
+    @DisplayName("Given a calculator when 1 is added by 1 then the sum is equal to 2")
+    void givenACalculatorWhen1IsAddedBy1ThenTheSumIsEqualTo2() {
         // arrange
         final var calculator = new Calculator();
 
@@ -21,8 +21,8 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Given a calculator when an add operation is executed then 21 plus 5 is equal to 26")
-    void givenACalculatorWhenAnAddOperationIsExecutedThen21Plus5IsEqualTo26() {
+    @DisplayName("Given a calculator when 21 is added by 5 then the sum is equal to 26")
+    void givenACalculatorWhen21IsAddedBy5ThenTheSumIsEqualTo26() {
         // arrange
         final var calculator = new Calculator();
 
@@ -34,8 +34,8 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Given a calculator when an add operation is executed then -10 plus 10 is equal to 0")
-    void givenACalculatorWhenAnAddOperationIsExecutedThenNegative10Plus10IsEqualTo0() {
+    @DisplayName("Given a calculator when -10 is added by 10 then the sum is equal to 0")
+    void givenACalculatorWhenNegative10IsAddedBy10ThenTheSumIsEqualTo0() {
         // arrange
         final var calculator = new Calculator();
 
@@ -47,8 +47,8 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Given a calculator when an add operation is executed then -13 plus -15 is equal to -28")
-    void givenACalculatorWhenAnAddOperationIsExecutedThenNegative13PlusNegative15IsEqualToNegative28() {
+    @DisplayName("Given a calculator when -13 is added by -15 then the sum is equal to -28")
+    void givenACalculatorWhenNegative13IsAddedByNegative15ThenTheSumIsEqualToNegative28() {
         // arrange
         final var calculator = new Calculator();
 
@@ -60,8 +60,8 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Given a calculator when a subtract operation is executed then 1 minus 2 is equal to -1")
-    void givenACalculatorWhenASubtractOperationIsExecutedThen1Minus2IsEqualToNegative1() {
+    @DisplayName("Given a calculator when 1 is subtracted by 2 then the difference is equal to -1")
+    void givenACalculatorWhen1IsSubtractedBy2ThenTheDifferenceIsEqualToNegative1() {
         // arrange
         final var calculator = new Calculator();
 
@@ -73,8 +73,8 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Given a calculator when a subtract operation is executed then 10 minus 10 is equal to 0")
-    void givenACalculatorWhenASubtractOperationIsExecutedThen10Minus10IsEqualTo0() {
+    @DisplayName("Given a calculator when 10 is subtracted by 10 then the difference is equal to 0")
+    void givenACalculatorWhen10IsSubtractedBy10ThenTheDifferenceIsEqualTo0() {
         // arrange
         final var calculator = new Calculator();
 
@@ -86,8 +86,8 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Given a calculator when a subtract operation is executed then -10 minus -10 is equal to 0")
-    void givenACalculatorWhenASubtractOperationIsExecutedThenNegative10MinusNegative10IsEqualTo0() {
+    @DisplayName("Given a calculator when -10 is subtracted by -10 then the difference is equal to 0")
+    void givenACalculatorWhenNegative10IsSubtractedByNegative10ThenTheDifferenceIsEqualTo0() {
         // arrange
         final var calculator = new Calculator();
 
@@ -99,8 +99,8 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Given a calculator when a subtract operation is executed then -15 minus 15 is equal to -30")
-    void givenACalculatorWhenASubtractOperationIsExecutedThenNegative15Minus15IsEqualToNegative30() {
+    @DisplayName("Given a calculator when -15 is subtracted by 15 then the difference is equal to -30")
+    void givenACalculatorWhenNegative15IsSubtractedBy15ThenTheDifferenceIsEqualToNegative30() {
         // arrange
         final var calculator = new Calculator();
 
@@ -109,6 +109,58 @@ class CalculatorTest {
 
         // assert
         assertEquals(-30, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when 1 is multiplied by 0 then the product is equal to 0")
+    void givenACalculatorWhen1IsMultipliedBy0ThenTheProductIsEqualTo0() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.multiply(1, 0);
+
+        // assert
+        assertEquals(0, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when 1 is multiplied by 10 then the product is equal to 10")
+    void givenACalculatorWhen1IsMultipliedBy10ThenTheProductIsEqualTo10() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.multiply(1, 10);
+
+        // assert
+        assertEquals(10, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when -10 is multiplied by 10 then the product is equal to -100")
+    void givenACalculatorWhenNegative10IsMultipliedBy10ThenTheProductIsEqualToNegative100() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.multiply(-10, 10);
+
+        // assert
+        assertEquals(-100, result);
+    }
+
+    @Test
+    @DisplayName("Given a calculator when -10 is multiplied by -15 then the product is equal to 150")
+    void givenACalculatorWhenNegative10IsMultipliedByNegative15ThenTheProductIsEqualToNegative150() {
+        // arrange
+        final var calculator = new Calculator();
+
+        // act
+        final var result = calculator.multiply(-10, -15);
+
+        // assert
+        assertEquals(150, result);
     }
 
 }
